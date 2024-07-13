@@ -20,9 +20,13 @@ export class FriendService {
     public async getFriends(): Promise<ICODFriend[]> {
         const result = await presence();
 
+        console.log('Getting friends', result)
+
         const friends = await this.repository.getAllFriends();
 
         const online = result.filter((presence) => presence.state === 'Online');
+
+        console.log('Getting friends', online)
 
         const array : ICODFriend[] = []
 
