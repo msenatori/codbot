@@ -60,6 +60,10 @@ bot.onText(/\/on/, async (msg) => {
   bot.sendMessage(msg.chat.id, message, { parse_mode: 'HTML' });
 });
 
+bot.onText(/\/win/, async (msg) => {
+    bot.sendMessage(msg.chat.id, "Aguanta pa que los estamos construyendo");
+});
+
 // Start the Express server
 app.listen(PORT, () => {
   console.log(`Express server is listening on ${PORT}`);

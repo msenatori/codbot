@@ -9,3 +9,13 @@ Muestra los offline y el tiempo offline.
 
 - /add
 Agregar un nuevo nombre de usuario de xbox a seguir,
+
+- /win user 1 user 2 user 3
+Ver como hacerlo mas facil.
+
+- /season
+tabla de valoreas para ver la aactual season quien va ganando.
+
+
+Cuando corre el proceso de deploy tarda en activar el wh, por lo que conviene forzarlo.
+curl -F "url=https://codbot-q70t.onrender.com/bot<TOKEN_TELE>" https://api.telegram.org/bot<TOKEN TELEGRAM>/setWebhook
