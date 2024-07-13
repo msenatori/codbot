@@ -19,9 +19,6 @@ export class FriendService {
 
     public async getFriends(): Promise<ICODFriend[]> {
         const result = await presence();
-
-        console.log('Getting friends', result)
-
         const friends = await this.repository.getAllFriends();
 
         const online = result.filter((presence) => presence.state === 'Online');
@@ -35,9 +32,9 @@ export class FriendService {
 
             const isPlay = presence.devices.find((d) => {
 
-                console.log('Device titles', d.titles)
+                console.log("user:", fr?.displayName, "titles", JSON.stringify(d.titles, null, 2))
 
-                if (d.titles.find((t) => t.id === "2001700854")) {
+                if (d.titles.find((t) => t.id === "2001700854" || t.id === "2046748982")) {
                     return true
                 };
             });
