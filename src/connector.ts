@@ -20,13 +20,6 @@ const execute = async (url: string, options: RequestInit = {}) => {
   return response.json();
 };
 
-
-export const recentPlayers = async () => {
-    const response = await execute('/v2/recent-players');
-
-    console.log(response);
-}
-
 export const presence = async () : Promise<IPresence[]> => {
     const [response, iam] = await Promise.all([
         await execute(`/v2/presence`),
