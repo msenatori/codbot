@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/bot.js",
     "build": "tsc",
-    "dev": "npx -r ts-node src/bot.ts"
+    "dev": "npx -r ts-node src/bot.ts",
+    "deploy": "npm install && npm run build"
   },
   "keywords": [],
   "author": "",
