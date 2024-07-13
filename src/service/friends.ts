@@ -30,16 +30,16 @@ export class FriendService {
         online.forEach(presence => {
             const fr = friends.find((f) => (presence.xuid === f.xuid));
 
-            const isPlay = presence.devices.find((d) => {
+            // const isPlay = presence.devices.find((d) => {
 
-                console.log("user:", fr?.displayName, "titles", JSON.stringify(d.titles, null, 2))
+            //     console.log("user:", fr?.displayName, "titles", JSON.stringify(d.titles, null, 2))
 
-                if (d.titles.find((t) => t.id === "2001700854" || t.id === "2046748982")) {
-                    return true
-                };
-            });
+            //     if (d.titles.find((t) => t.id === "2001700854" || t.id === "2046748982" || t.id === "1022622766")) {
+            //         return true
+            //     };
+            // });
 
-            if (fr && isPlay) {
+            if (fr) {
                 array.push({
                     user: fr.displayName,
                     state: fr.state
