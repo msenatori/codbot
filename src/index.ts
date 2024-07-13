@@ -45,15 +45,14 @@ bot.onText(/\/on/, async (msg) => {
     return;
   }
 
-  const header = 'User               | State     | Play        \n' +
-                 '-------------------|-----------|-------------\n';
+  const header = 'User               | State     \n' +
+                 '-------------------|-----------\n';
 
   const rows = friends.map(f => {
     const user = f.user.padEnd(18);
     const state = f.state.padEnd(10);
-    const play = f.play.padEnd(12);
     
-    return `${user} | ${state} | ${play}`;
+    return `${user} | ${state} `;
   }).join('\n');
 
   const message = `<pre>${header}${rows}</pre>`;

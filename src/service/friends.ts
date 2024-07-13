@@ -42,8 +42,7 @@ export class FriendService {
             if (fr && isPlay) {
                 array.push({
                     user: fr.displayName,
-                    state: fr.state,
-                    play: 'Playing COD'
+                    state: fr.state
                 })
             }
         });
