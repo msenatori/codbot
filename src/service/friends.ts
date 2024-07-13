@@ -42,7 +42,7 @@ export class FriendService {
             if (fr) {
                 array.push({
                     user: fr.displayName,
-                    state: fr.state
+                    state: presence.state
                 })
             }
         });
