@@ -26,7 +26,7 @@ export class FriendService {
 
         const online = result.filter((presence) => presence.state === 'Online');
 
-        console.log('Getting friends', online)
+        console.log('Getting friends', JSON.stringify(online, null, 2))
 
         const array : ICODFriend[] = []
 
@@ -34,6 +34,9 @@ export class FriendService {
             const fr = friends.find((f) => (presence.xuid === f.xuid));
 
             const isPlay = presence.devices.find((d) => {
+
+                console.log('Device titles', d.titles)
+
                 if (d.titles.find((t) => t.id === "2001700854")) {
                     return true
                 };
