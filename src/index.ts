@@ -26,6 +26,10 @@ app.post(`/bot${TOKEN}`, (req, res) => {
   res.sendStatus(200);
 });
 
+app.get('/', (req, res) => {
+    res.send('pingueame esta!');
+});
+
 const friendRespository = new FriendRepository();
 const friendsService = new FriendService(friendRespository);
 
