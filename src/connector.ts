@@ -26,7 +26,7 @@ export const presence = async () : Promise<IPresence[]> => {
         await execute('/v2/2533274875398374/presence')
     ]);
 
-    return [...response, iam];
+    return [...response, ...iam];
 }
 
 export const friends = async () => {
