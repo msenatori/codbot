@@ -11,9 +11,3 @@ export const connectDB = async () => {
     process.exit(1);
   }
 };
-
-//codbot
-//iqKFLhe8004E4k0V
-
-//mongotest
-//K3cSkNZ1aAw8fXoW

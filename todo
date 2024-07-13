@@ -1,7 +1,7 @@
-- /update
+- /update (APAGADO)
 Buscar usuarios y actualizar base de datos.
 
-- /on
+- /on (DONE)
 Muestra quienes estan conectados jugando cod
 
 - /off
@@ -19,3 +19,7 @@ tabla de valoreas para ver la aactual season quien va ganando.
 
 Cuando corre el proceso de deploy tarda en activar el wh, por lo que conviene forzarlo.
 curl -F "url=https://codbot-q70t.onrender.com/bot<TOKEN_TELE>" https://api.telegram.org/bot<TOKEN TELEGRAM>/setWebhook
+
+Para redesplegar el servicio.
+
+https://api.render.com/deploy/srv-cq9a1elds78s739b5gj0?key=E11_F44Z1vU
