@@ -1,0 +1,11 @@
+- /update
+Buscar usuarios y actualizar base de datos.
+
+- /on
+Muestra quienes estan conectados jugando cod
+
+- /off
+Muestra los offline y el tiempo offline.
+
+- /add
+Agregar un nuevo nombre de usuario de xbox a seguir,

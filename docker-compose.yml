@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+    mongodb-cod:
+        image: mongo:latest
+        container_name: mongodb-cod
+        restart: always
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: cod
+            MONGO_INITDB_ROOT_PASSWORD: cod
+            MONGO_INITDB_DATABASE: cod
+        ports:
+            - 27017:27017
+        volumes:
+            - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
