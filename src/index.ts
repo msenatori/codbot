@@ -22,8 +22,10 @@ app.use(bodyParser.json());
 
 // Webhook endpoint
 app.post(`/bot${TOKEN}`, (req, res) => {
+  console.log('Webhook received');
   bot.processUpdate(req.body);
   res.sendStatus(200);
+  console.log('Webhook processed');
 });
 
 app.get('/', (req, res) => {
@@ -40,28 +42,34 @@ bot.onText(/\/start/, (msg) => {
 });
 
 bot.onText(/\/on/, async (msg) => {
-  console.log('Turning on');
+    try {
+        console.log('Turning on');
 
-  const friends = await friendsService.getFriends();
-
-  if (friends.length === 0) {
-    bot.sendMessage(msg.chat.id, 'No hay nadie pa!');
-    return;
-  }
-
-  const header = 'User               | State     \n' +
-                 '-------------------|-----------\n';
-
-  const rows = friends.map(f => {
-    const user = f.user.padEnd(18);
-    const state = f.state.padEnd(10);
-    
-    return `${user} | ${state} `;
-  }).join('\n');
-
-  const message = `<pre>${header}${rows}</pre>`;
-
-  bot.sendMessage(msg.chat.id, message, { parse_mode: 'HTML' });
+        const friends = await friendsService.getFriends();
+      
+        if (friends.length === 0) {
+          bot.sendMessage(msg.chat.id, 'No hay nadie pa!');
+          return;
+        }
+      
+        const header = 'User               | State     \n' +
+                       '-------------------|-----------\n';
+      
+        const rows = friends.map(f => {
+          const user = f.user.padEnd(18);
+          const state = f.state.padEnd(10);
+          
+          return `${user} | ${state} `;
+        }).join('\n');
+      
+        const message = `<pre>${header}${rows}</pre>`;
+      
+        bot.sendMessage(msg.chat.id, message, { parse_mode: 'HTML' });
+    } catch(error: any) {
+        console.error(error)
+        const message = `Error: ${error.message}, No joda! que no funciona.`;
+        bot.sendMessage(msg.chat.id, message);
+    }
 });
 
 bot.onText(/\/win/, async (msg) => {
